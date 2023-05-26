@@ -3,26 +3,43 @@
   "title": "GURPS Instant Effects",
   "description": "Ready Effects to use in your game",
   "version": "This is auto replaced",
-  "library": "false",
-  "manifestPlusVersion": "1.2.0",
   "compatibility": {
-    "minimum": 10,
-    "verified": 10,
-    "maximum": 11
+    "minimum": "10",
+    "verified": "10",
+    "maximum": "11"
   },
   "authors": [
     {
       "name": "The League of Extraordinary FVTT Developers",
-      "url": "https://github.com/League-of-Foundry-Developers",
-      "discord": "discordID#0001"
+      "discord": "discordID#0001",
+      "url": "https://github.com/League-of-Foundry-Developers"
     }
   ],
   "relationships": {
-    "systems": [],
-    "requires": []
+    "requires": [
+      {
+        "id": "gurps",
+        "type": "system"
+      },
+      {
+        "id": "jb2a_patreon",
+        "type": "module"
+      },
+      {
+        "id": "warpgate",
+        "type": "module"
+      },
+      {
+        "id": "sequencer",
+        "type": "module"
+      }
+    ]
   },
   "esmodules": [
-    "scripts/module.js"
+    "scripts/drowsy.js",
+    "scripts/reeling.js",
+    "scripts/shocked.js",
+    "scripts/stunned.js"
   ],
   "scripts": [
     "scripts/lib/lib.js"
@@ -34,7 +51,8 @@
     {
       "lang": "en",
       "name": "English",
-      "path": "languages/en.json"
+      "path": "languages/en.json",
+      "flags": {}
     }
   ],
   "url": "This is auto replaced",
@@ -45,7 +63,9 @@
   "media": [
     {
       "type": "icon",
-      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
+      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4",
+      "loop": false,
+      "flags": {}
     }
   ]
 }
