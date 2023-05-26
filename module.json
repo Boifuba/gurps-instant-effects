@@ -49,14 +49,6 @@
   "styles": [
     "styles/module.css"
   ],
-  "languages": [
-    {
-      "lang": "pt_br",
-      "name": "Portuguese",
-      "path": "languages/pt_br.json",
-      "flags": {}
-    }
-  ],
   "packs": [
     {
       "label": "GIE Macros",
