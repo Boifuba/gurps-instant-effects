@@ -39,7 +39,9 @@
     "scripts/drowsy.js",
     "scripts/reeling.js",
     "scripts/shocked.js",
-    "scripts/stunned.js"
+    "scripts/stunned.js",
+    "scripts/sleeping.js"
+
   ],
   "scripts": [
     "scripts/lib/lib.js"

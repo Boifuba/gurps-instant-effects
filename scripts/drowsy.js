@@ -111,7 +111,7 @@ Hooks.on('createActiveEffect', async (effect) => {
 Hooks.on('deleteActiveEffect', async (effect) => {
     if (effect.label !== 'Nauseated') return true;
     let token = canvas.tokens.controlled[0];
-    Sequencer.EffectManager.endEffects({ name: "*Shocked*", object: token });
+    Sequencer.EffectManager.endEffects({ name: "*Nauseated*", object: token });
 
 
 });
