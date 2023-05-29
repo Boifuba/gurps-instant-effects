@@ -15,14 +15,7 @@
       "url": "https://github.com/League-of-Foundry-Developers"
     }
   ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en.json",
-      "flags": {}
-    }
-  ],
+
   "relationships": {
     "requires": [
       {
