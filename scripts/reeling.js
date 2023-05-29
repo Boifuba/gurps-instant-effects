@@ -1,5 +1,6 @@
 Hooks.on('createActiveEffect', async (effect)=>{
     if (effect.label!='Reeling') return true;
+    console.log("hooked")
   let token = canvas.tokens.controlled[0]
    new Sequence()
               .effect()
