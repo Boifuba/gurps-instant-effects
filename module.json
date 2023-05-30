@@ -38,10 +38,12 @@
   },
   "esmodules": [
     "scripts/drowsy.js",
-    "scripts/reeling.js",
+    "scripts/bleeding.js",
     "scripts/shocked.js",
     "scripts/stunned.js",
-    "scripts/sleeping.js"
+    "scripts/sleeping.js",
+    "scripts/counter.js"
+
 
   ],
   "scripts": [
