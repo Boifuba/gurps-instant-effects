@@ -1,6 +1,6 @@
 Hooks.on('createActiveEffect', async (effect)=>{
   if (effect.label!='Stunned') return true;
-  {
+  
 let token = canvas.tokens.controlled[0]
 
  new Sequence()
@@ -12,7 +12,7 @@ let token = canvas.tokens.controlled[0]
             .elevation(0)
             .play();
 
-}          })
+         })
 
 Hooks.on('deleteActiveEffect', async (effect) => {
   if (effect.label !== 'Stunned') return true;
