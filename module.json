@@ -42,12 +42,10 @@
     "scripts/shocked.js",
     "scripts/stunned.js",
     "scripts/sleeping.js",
-<<<<<<< HEAD
     "scripts/counter.js",
-    "scripts/delete.js"
-=======
+    "scripts/delete.js",
     "scripts/counter.js"
->>>>>>> 504e6ff5a1df2f1b2587163e81586f8af88ecf7b
+
 
 
   ],
