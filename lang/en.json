@@ -1,3 +1,52 @@
 {
-    "MODULE.hello": "hello"
+  "gurps-instant-effects": {
+    "settings": {
+      "showMacroButton": {
+        "name": "Show Macro Bar Button",
+        "hint": "Show a button in the macro bar for quick access to GURPS Instant Effects"
+      },
+      "showRemoveAllMacro": {
+        "name": "Show Remove All Effects Macro",
+        "hint": "Show a macro button for removing all GURPS Instant Effects from selected tokens"
+      }
+    },
+    "dialog": {
+      "title": "GURPS Instant Effects",
+      "manager": "Effects Manager",
+      "selectEffect": "Select Effect",
+      "applyTo": "Apply to",
+      "duration": "Duration (rounds)",
+      "permanent": "Permanent",
+      "permanentEffect": "Permanent Effect (No Round Duration)",
+      "permanentPlaceholder": "N/A for permanent effects",
+      "target": "Target",
+      "self": "Self",
+      "apply": "Apply",
+      "cancel": "Cancel",
+      "manage": "Manage Effects",
+      "addNew": "Add New Effect",
+      "edit": "Edit",
+      "delete": "Delete",
+      "save": "Save",
+      "create": "Create",
+      "update": "Update",
+      "browse": "Browse",
+      "applyCounter": "Apply Counter"
+    },
+    "notifications": {
+      "noTokens": "Please select at least one token",
+      "noEffectSelected": "Please select an effect first",
+      "invalidCounterNumber": "Please enter a valid counter number (1 or higher)",
+      "counterTooHigh": "Counter number cannot be higher than 10",
+      "applied": "Applied {effect} to {token}",
+      "removed": "Removed {effect} from {token}",
+      "counterApplied": "Applied Counter ({number}) to {token}",
+      "effectAdded": "Effect added successfully",
+      "effectUpdated": "Effect updated successfully",
+      "effectDeleted": "Effect deleted successfully",
+      "allEffectsRemoved": "Removed {count} effect(s) from {token}",
+      "noEffectsToRemove": "No GURPS Instant Effects found on selected tokens",
+      "noTokensSelected": "Please select at least one token"
+    }
+  }
 }

@@ -1,0 +1,309 @@
+/* GURPS Instant Effects - CSS Simples e Funcional */
+
+/* === DIALOG PRINCIPAL === */
+.gurps-instant-effects-dialog .form-group {
+  margin-bottom: 10px;
+}
+
+.gurps-instant-effects-dialog .form-group label {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Grid de efeitos */
+.effect-selection-grid {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.effect-category-section {
+  margin-bottom: 10px;
+}
+
+.category-header {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  padding: 4px;
+  background: #f0f0f0;
+}
+
+.category-effects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 6px;
+}
+
+/* Cards de efeito */
+.effect-item-quick-dialog {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background: #fff;
+}
+
+.effect-item-quick-dialog:hover {
+  background: #f5f5f5;
+}
+
+.effect-item-quick-dialog.selected {
+  background: #e3f2fd;
+  border-color: #2196f3;
+}
+
+.effect-item-quick-dialog .effect-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.effect-item-quick-dialog .effect-name {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.effect-item-quick-dialog .effect-type {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Controles de duração em linha */
+.duration-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.duration-input-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.duration-input-group label {
+  margin: 0;
+  font-size: 14px;
+}
+
+.duration-input-group input {
+  width: 60px;
+  height: 28px;
+  padding: 4px 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+}
+
+.permanent-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.permanent-checkbox label {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.permanent-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+/* Seleção de aplicação */
+.target-selection select {
+  width: 100%;
+  height: 28px;
+  padding: 4px 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+}
+
+
+
+.dialog-buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--button-size);
+    min-height: var(--button-size);
+    gap: 0.25rem;
+    padding: 0 0.5rem;
+    background: var(--button-background-color);
+    border: 1px solid var(--button-border-color);
+    border-radius: 4px;
+    color: var(--button-text-color);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-14);
+    line-height: normal;
+    text-decoration: none;
+    cursor: var(--cursor-pointer);
+    transition: 0.5s;
+}
+
+
+
+.manage-effects-button {
+display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--button-size);
+    min-height: var(--button-size);
+    gap: 0.25rem;
+    padding: 0 0.5rem;
+    background: var(--button-background-color);
+    border: 1px solid var(--button-border-color);
+    border-radius: 4px;
+    color: var(--button-text-color);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-14);
+    line-height: normal;
+    text-decoration: none;
+    cursor: var(--cursor-pointer);
+    transition: 0.5s;
+}
+
+.manage-effects-button:hover {
+  background: #f5f5f5;
+}
+
+/* === EFFECTS MANAGER === */
+.effects-manager .manager-header button {
+  width: 100%;
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.effects-filter {
+  margin-bottom: 10px;
+}
+
+.effects-filter label {
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.effects-filter select {
+  width: 100%;
+  height: 28px;
+  padding: 4px 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+}
+
+.effects-list {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+/* Items do manager */
+.effects-manager .effect-item {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border: 1px solid #ccc;
+  margin: 2px 0;
+  background: #fff;
+}
+
+.effects-manager .effect-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.effects-manager .effect-item > div:nth-child(2) {
+  flex: 1;
+}
+
+.effects-manager .effect-item strong {
+  font-size: 14px;
+}
+
+.effects-manager .effect-item small {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Botões de ação juntos */
+.effects-manager .effect-item > div:last-child {
+  display: flex;
+  gap: 2px;
+}
+
+.effects-manager .effect-item button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.effects-manager .effect-item button:hover {
+  background: #f5f5f5;
+}
+
+/* === CREATE DIALOG === */
+.effect-create-dialog .form-group {
+  margin-bottom: 10px;
+}
+
+.effect-create-dialog label {
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.effect-create-dialog input,
+.effect-create-dialog select {
+  width: 100%;
+  height: 28px;
+  padding: 4px 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+}
+
+/* Icon input com botão de pasta */
+.icon-input-group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.icon-input-group input {
+  flex: 1;
+  height: 28px;
+}
+
+.icon-browse-button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-browse-button:hover {
+  background: #f5f5f5;
+}

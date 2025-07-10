@@ -1,86 +1,41 @@
 {
   "id": "gurps-instant-effects",
   "title": "GURPS Instant Effects",
-  "description": "Ready Effects to use in your game",
-  "version": "This is auto replaced",
-  "compatibility": {
-    "minimum": "10",
-    "verified": "10",
-    "maximum": "11"
-  },
+  "description": "Quick application and management of preconfigured effects for GURPS system in Foundry VTT",
   "authors": [
     {
-      "name": "Boifubá",
-      "discord": "discordID#0001",
-      "url": "https://github.com/League-of-Foundry-Developers"
+      "name": "GURPS Community"
     }
   ],
-
-  "relationships": {
-    "requires": [
-      {
-        "id": "gurps",
-        "type": "system"
-      },
-      {
-        "id": "jb2a_patreon",
-        "type": "module"
-      },
-      {
-        "id": "warpgate",
-        "type": "module"
-      },
-      {
-        "id": "sequencer",
-        "type": "module"
-      }
-    ]
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12"
   },
+
+
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
   "esmodules": [
-    "scripts/drowsy.js",
-    "scripts/bleeding.js",
-    "scripts/shocked.js",
-    "scripts/stunned.js",
-    "scripts/sleeping.js",
-    "scripts/counter.js",
-    "scripts/delete.js",
-    "scripts/counter.js"
-
-
-
+    "gurps-counter.js",
+    "scripts/main.js",
+    "scripts/effects-manager.js"
   ],
-  "scripts": [
-    "scripts/lib/lib.js"
-  ],
-  "styles": [
-    "styles/module.css"
-  ],
-  
-  "packs": [
-    {
-      "label": "GIE Macros",
-      "name": "macros",
-      "type": "Macro",
-      "system": "gurps",
-      "path": "packs/macros",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    }
- ],
-  "url": "This is auto replaced",
-  "manifest": "This is auto replaced",
-  "download": "This is auto replaced",
-  "license": "LICENSE",
-  "readme": "README.md",
-  "media": [
-    {
-      "type": "icon",
-      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4",
-      "loop": false,
-      "flags": {}
-    }
-  ]
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "MIT",
+  "readme": "",
+  "bugs": "",
+  "changelog": ""
 }

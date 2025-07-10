@@ -1,0 +1,52 @@
+{
+  "gurps-instant-effects": {
+    "settings": {
+      "showMacroButton": {
+        "name": "Mostrar Botão na Barra de Macros",
+        "hint": "Mostrar um botão na barra de macros para acesso rápido ao GURPS Instant Effects"
+      },
+      "showRemoveAllMacro": {
+        "name": "Mostrar Macro Remover Todos os Efeitos",
+        "hint": "Mostrar um botão de macro para remover todos os GURPS Instant Effects dos tokens selecionados"
+      }
+    },
+    "dialog": {
+      "title": "GURPS Instant Effects",
+      "manager": "Gerenciador de Efeitos",
+      "selectEffect": "Selecionar Efeito",
+      "applyTo": "Aplicar em",
+      "duration": "Duração (rodadas)",
+      "permanent": "Permanente",
+      "permanentEffect": "Efeito Permanente (Sem Duração em Rodadas)",
+      "permanentPlaceholder": "N/A para efeitos permanentes",
+      "target": "Alvo",
+      "self": "Próprio",
+      "apply": "Aplicar",
+      "cancel": "Cancelar",
+      "manage": "Gerenciar Efeitos",
+      "addNew": "Adicionar Novo Efeito",
+      "edit": "Editar",
+      "delete": "Deletar",
+      "save": "Salvar",
+      "create": "Criar",
+      "update": "Atualizar",
+      "browse": "Navegar",
+      "applyCounter": "Aplicar Contador"
+    },
+    "notifications": {
+      "noTokens": "Por favor, selecione pelo menos um token",
+      "noEffectSelected": "Por favor, selecione um efeito primeiro",
+      "invalidCounterNumber": "Por favor, insira um número válido para o contador (1 ou maior)",
+      "counterTooHigh": "O número do contador não pode ser maior que 10",
+      "applied": "Aplicado {effect} em {token}",
+      "removed": "Removido {effect} de {token}",
+      "counterApplied": "Aplicado Contador ({number}) em {token}",
+      "effectAdded": "Efeito adicionado com sucesso",
+      "effectUpdated": "Efeito atualizado com sucesso",
+      "effectDeleted": "Efeito deletado com sucesso",
+      "allEffectsRemoved": "Removido {count} efeito(s) de {token}",
+      "noEffectsToRemove": "Nenhum GURPS Instant Effect encontrado nos tokens selecionados",
+      "noTokensSelected": "Por favor, selecione pelo menos um token"
+    }
+  }
+}
