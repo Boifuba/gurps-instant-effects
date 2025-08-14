@@ -13,20 +13,20 @@ export class GURPSImageBrowser {
     await this.loadImages();
     
     const imageGrid = this.images.map(img => `
-      <div class="image-item" data-path="${img.path}" style="display: inline-block; margin: 5px; cursor: pointer; border: 2px solid transparent;">
-        <img src="${img.path}" style="width: 64px; height: 64px; object-fit: cover;">
-        <div style="font-size: 10px; text-align: center; width: 64px; overflow: hidden;">${img.name}</div>
+      <div class="image-item" data-path="${img.path}">
+        <img src="${img.path}" class="image-thumbnail">
+        <div class="image-name">${img.name}</div>
       </div>
     `).join('');
     
     const content = `
       <div class="image-browser">
-        <div class="browser-header" style="margin-bottom: 10px;">
+        <div class="browser-header">
           <label for="folder-path">Folder Path:</label>
-          <input type="text" id="folder-path" value="${this.currentPath}" style="width: 70%;">
-          <button id="browse-folder" style="width: 25%;">Browse</button>
+          <input type="text" id="folder-path" value="${this.currentPath}">
+          <button id="browse-folder">Browse</button>
         </div>
-        <div class="image-grid" style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+        <div class="image-grid">
           ${imageGrid}
         </div>
       </div>
@@ -54,8 +54,8 @@ export class GURPSImageBrowser {
       render: (html) => {
         // Handle image selection
         html.find('.image-item').click(function() {
-          html.find('.image-item').removeClass('selected').css('border', '2px solid transparent');
-          $(this).addClass('selected').css('border', '2px solid #007bff');
+          html.find('.image-item').removeClass('selected');
+          $(this).addClass('selected');
         });
         
         // Handle folder browsing

@@ -12,8 +12,9 @@
     "minimum": "12",
     "verified": "12"
   },
-
-
+  "styles": [
+    "styles/module.css"
+  ],
   "languages": [
     {
       "lang": "en",
@@ -27,9 +28,9 @@
     }
   ],
   "esmodules": [
-    "gurps-counter.js",
     "scripts/main.js",
-    "scripts/effects-manager.js"
+    "scripts/effects-manager.js",
+    "scripts/image-browser.js"
   ],
   "url": "",
   "manifest": "",

@@ -124,14 +124,12 @@ export class GURPSEffectsManager {
         </div>
         <div class="form-group duration-controls">
           <div class="duration-input-group">
-            <label for="quick-duration">${game.i18n.localize('gurps-instant-effects.dialog.duration')}:</label>
-            <input type="number" id="quick-duration" name="duration" value="1" min="1" placeholder="${game.i18n.localize('gurps-instant-effects.dialog.permanentPlaceholder')}">
+            <label for="quick-duration">Duration (rounds):</label>
+            <input type="number" id="quick-duration" name="duration" value="1" min="1" placeholder="">
           </div>
           <div class="permanent-checkbox">
-            <label>
-              <input type="checkbox" id="effect-permanent-quick" name="isPermanent">
-              ${game.i18n.localize('gurps-instant-effects.dialog.permanent')}
-            </label>
+            <input type="checkbox" id="effect-permanent-quick" name="isPermanent">
+            <label for="effect-permanent-quick">Permanent</label>
           </div>
         </div>
         <div class="dialog-buttons">
@@ -372,14 +370,14 @@ export class GURPSEffectsManager {
     ).join('');
     
     const effectsList = this.effects.map(effect => `
-      <div class="effect-item" data-id="${effect.id}" style="display: flex; align-items: center; padding: 5px; border: 1px solid #ccc; margin: 2px;">
-        <img src="${effect.icon}" style="width: 32px; height: 32px; margin-right: 10px;">
-        <div style="flex: 1;">
+      <div class="effect-item" data-id="${effect.id}">
+        <img src="${effect.icon}" class="effect-icon">
+        <div class="effect-details">
           <strong>${effect.name}</strong>
           <br>
-          <small>${effect.effectType} | ${effect.effectValue} | ${effect.category}</small>
+          <small class="effect-meta">${effect.effectType} | ${effect.effectValue} | ${effect.category}</small>
         </div>
-        <div>
+        <div class="effect-actions">
           <button class="edit-effect" data-id="${effect.id}" title="${game.i18n.localize('gurps-instant-effects.dialog.edit')}">
             <i class="fas fa-edit"></i>
           </button>
@@ -392,19 +390,19 @@ export class GURPSEffectsManager {
     
     const content = `
       <div class="effects-manager">
-        <div class="manager-header" style="margin-bottom: 10px;">
-          <button id="add-effect" style="width: 100%;">
+        <div class="manager-header">
+          <button id="add-effect">
             <i class="fas fa-plus"></i> ${game.i18n.localize('gurps-instant-effects.dialog.addNew')}
           </button>
         </div>
-        <div class="effects-filter" style="margin-bottom: 10px;">
+        <div class="effects-filter">
           <label for="category-filter">Filter by Category:</label>
-          <select id="category-filter" style="width: 100%;">
+          <select id="category-filter">
             <option value="">All Categories</option>
             ${categoryOptions}
           </select>
         </div>
-        <div class="effects-list" style="max-height: 400px; overflow-y: auto;">
+        <div class="effects-list">
           ${effectsList}
         </div>
       </div>
@@ -452,9 +450,9 @@ export class GURPSEffectsManager {
             const effectId = item.dataset.id;
             const effect = this.effects.find(eff => eff.id === effectId);
             if (!category || effect.category === category) {
-              item.style.display = 'flex';
+              $(item).show();
             } else {
-              item.style.display = 'none';
+              $(item).hide();
             }
           });
         });
@@ -483,16 +481,18 @@ export class GURPSEffectsManager {
         <div class="form-group">
           <label for="effect-icon">Icon:</label>
           <div class="icon-input-group">
-            <input type="text" id="effect-icon" name="icon" value="${existingEffect?.icon || ''}" required readonly>
+            <input type="text" id="effect-icon" name="icon" value="${existingEffect?.icon || ''}" required>
             <button type="button" id="browse-icon" class="icon-browse-button" title="${game.i18n.localize('gurps-instant-effects.dialog.browse')}">
               <i class="fas fa-folder"></i>
             </button>
-          </div>
-        </div>
-        <div class="form-group">
+</div>
+  <div class="form-group">
           <label for="effect-category">Category:</label>
           <input type="text" id="effect-category" name="category" value="${existingEffect?.category || 'general'}">
-        </div>
+          
+          </div>
+        
+     
       </form>
     `;
     

@@ -31,7 +31,7 @@
       "create": "Create",
       "update": "Update",
       "browse": "Browse",
-      "applyCounter": "Apply Counter"
+      "applyCounter": "Counter"
     },
     "notifications": {
       "noTokens": "Please select at least one token",

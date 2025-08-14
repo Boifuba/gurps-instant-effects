@@ -1,309 +1,492 @@
-/* GURPS Instant Effects - CSS Simples e Funcional */
+/* GURPS Instant Effects - Completely Refactored CSS */
 
-/* === DIALOG PRINCIPAL === */
-.gurps-instant-effects-dialog .form-group {
-  margin-bottom: 10px;
+/* Global Reset - Remove all shadows and outlines */
+.gurps-instant-effects-dialog *,
+.effects-manager *,
+.effect-create-dialog *,
+.image-browser * {
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: 0 !important;
 }
 
-.gurps-instant-effects-dialog .form-group label {
-  font-size: 14px;
-  font-weight: normal;
-  margin-bottom: 4px;
-  display: block;
+/* Base Dialog Styles */
+.gurps-instant-effects-dialog .window-content {
+  padding: 12px;
 }
 
-/* Grid de efeitos */
+/* Effect Selection Grid */
 .effect-selection-grid {
-  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+  max-height: 400px;
   overflow-y: auto;
-  border: 1px solid #ccc;
-  padding: 8px;
-  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #666;
 }
 
+/* Category Sections */
 .effect-category-section {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.effect-category-section:last-child {
+  margin-bottom: 0;
 }
 
 .category-header {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
-  margin-bottom: 6px;
-  padding: 4px;
-  background: #f0f0f0;
+  margin-bottom: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid #666;
+  text-transform: capitalize;
+  line-height: 1.2;
 }
 
 .category-effects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 6px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
 }
 
-/* Cards de efeito */
+/* Effect Items */
 .effect-item-quick-dialog {
   display: flex;
   align-items: center;
-  padding: 6px;
-  border: 1px solid #ccc;
+  padding: 8px;
+  border: 1px solid #666;
   cursor: pointer;
-  background: #fff;
 }
 
 .effect-item-quick-dialog:hover {
-  background: #f5f5f5;
+  border-color: #333;
 }
 
 .effect-item-quick-dialog.selected {
-  background: #e3f2fd;
-  border-color: #2196f3;
+  border-color: #000;
+  background: #e0e0e0;
 }
 
-.effect-item-quick-dialog .effect-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
+.effect-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  flex-shrink: 0;
 }
 
-.effect-item-quick-dialog .effect-name {
-  font-size: 14px;
-  font-weight: normal;
+.effect-info {
+  flex: 1;
+  min-width: 0;
 }
 
-.effect-item-quick-dialog .effect-type {
-  font-size: 12px;
+.effect-name {
+  font-weight: 600;
+  margin-bottom: 3px;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.effect-type {
+  font-size: 11px;
+  text-transform: uppercase;
   color: #666;
+  line-height: 1.1;
 }
 
-/* Controles de duração em linha */
+/* Form Elements */
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #666;
+  font-size: 13px;
+  min-height: 35px;
+  line-height: 1.2;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #000;
+}
+
+.form-group input:disabled {
+  cursor: not-allowed;
+}
+
+/* Duration Controls - Fixed Layout */
 .duration-controls {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .duration-input-group {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .duration-input-group label {
-  margin: 0;
-  font-size: 14px;
+  margin-bottom: 0;
+  white-space: nowrap;
+  font-size: 13px;
 }
 
 .duration-input-group input {
-  width: 60px;
-  height: 28px;
-  padding: 4px 6px;
-  font-size: 14px;
-  border: 1px solid #ccc;
+  width: 80px;
+  text-align: center;
+  margin: 0;
 }
 
+/* Permanent Checkbox - Fixed Alignment */
 .permanent-checkbox {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.permanent-checkbox label {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1;
-}
-
 .permanent-checkbox input[type="checkbox"] {
   width: 16px;
   height: 16px;
   margin: 0;
+  flex-shrink: 0;
 }
 
-/* Seleção de aplicação */
-.target-selection select {
-  width: 100%;
-  height: 28px;
-  padding: 4px 6px;
-  font-size: 14px;
-  border: 1px solid #ccc;
+.permanent-checkbox label {
+  margin: 0;
+  font-size: 13px;
+  cursor: pointer;
+  line-height: 16px;
+  white-space: nowrap;
 }
 
-
+/* Buttons - Reduced Gap */
+.dialog-buttons {
+  display: flex;
+  gap: 2px;
+  margin-top: 15px;
+  justify-content: center;
+}
 
 .dialog-buttons button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: var(--button-size);
-    min-height: var(--button-size);
-    gap: 0.25rem;
-    padding: 0 0.5rem;
-    background: var(--button-background-color);
-    border: 1px solid var(--button-border-color);
-    border-radius: 4px;
-    color: var(--button-text-color);
-    font-family: var(--font-sans);
-    font-size: var(--font-size-14);
-    line-height: normal;
-    text-decoration: none;
-    cursor: var(--cursor-pointer);
-    transition: 0.5s;
+  padding: 8px 12px;
+  border: 1px solid #666;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
 }
 
+.dialog-buttons button:hover {
+  border-color: #333;
+}
 
+.dialog-buttons button i {
+  font-size: 12px;
+}
 
 .manage-effects-button {
-display: flex;
-    justify-content: center;
-    align-items: center;
-    height: var(--button-size);
-    min-height: var(--button-size);
-    gap: 0.25rem;
-    padding: 0 0.5rem;
-    background: var(--button-background-color);
-    border: 1px solid var(--button-border-color);
-    border-radius: 4px;
-    color: var(--button-text-color);
-    font-family: var(--font-sans);
-    font-size: var(--font-size-14);
-    line-height: normal;
-    text-decoration: none;
-    cursor: var(--cursor-pointer);
-    transition: 0.5s;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #666;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
 .manage-effects-button:hover {
-  background: #f5f5f5;
+  border-color: #333;
 }
 
-/* === EFFECTS MANAGER === */
-.effects-manager .manager-header button {
+.manage-effects-button i {
+  font-size: 12px;
+}
+
+/* Effects Manager */
+.manager-header {
+  margin-bottom: 12px;
+}
+
+.manager-header button {
   width: 100%;
-  height: 32px;
-  padding: 6px 12px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  background: #fff;
+  padding: 8px 12px;
+  border: 1px solid #666;
   cursor: pointer;
-  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
+.manager-header button:hover {
+  border-color: #333;
+}
+
+.manager-header button i {
+  font-size: 12px;
+}
+
+/* Effects Filter - Fixed Dropdown */
 .effects-filter {
+  padding: 10px;
+  border: 1px solid #666;
   margin-bottom: 10px;
 }
 
 .effects-filter label {
-  font-size: 14px;
-  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 5px;
   display: block;
+  line-height: 1.2;
 }
 
 .effects-filter select {
   width: 100%;
-  height: 28px;
-  padding: 4px 6px;
-  font-size: 14px;
-  border: 1px solid #ccc;
+  padding: 6px 8px;
+  border: 1px solid #666;
+  font-size: 13px;
+  min-height: 35px;
+  line-height: 1.2;
 }
 
+.effects-filter select:focus {
+  border-color: #000;
+}
+
+/* Effects List */
 .effects-list {
-  max-height: 350px;
+  border: 1px solid #666;
+  padding: 10px;
+  max-height: 500px;
   overflow-y: auto;
 }
 
-/* Items do manager */
-.effects-manager .effect-item {
+.effect-item {
   display: flex;
   align-items: center;
-  padding: 6px;
-  border: 1px solid #ccc;
-  margin: 2px 0;
-  background: #fff;
+  padding: 8px;
+  border: 1px solid #666;
+  margin-bottom: 6px;
 }
 
-.effects-manager .effect-item img {
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
+.effect-item:hover {
+  border-color: #333;
 }
 
-.effects-manager .effect-item > div:nth-child(2) {
+.effect-item:last-child {
+  margin-bottom: 0;
+}
+
+.effect-item img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.effect-item .effect-details {
   flex: 1;
+  min-width: 0;
 }
 
-.effects-manager .effect-item strong {
-  font-size: 14px;
-}
-
-.effects-manager .effect-item small {
-  font-size: 12px;
-  color: #666;
-}
-
-/* Botões de ação juntos */
-.effects-manager .effect-item > div:last-child {
-  display: flex;
-  gap: 2px;
-}
-
-.effects-manager .effect-item button {
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  border: 1px solid #ccc;
-  background: #fff;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.effects-manager .effect-item button:hover {
-  background: #f5f5f5;
-}
-
-/* === CREATE DIALOG === */
-.effect-create-dialog .form-group {
-  margin-bottom: 10px;
-}
-
-.effect-create-dialog label {
-  font-size: 14px;
-  margin-bottom: 4px;
+.effect-item .effect-details strong {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.2;
   display: block;
+  margin-bottom: 3px;
 }
 
-.effect-create-dialog input,
-.effect-create-dialog select {
-  width: 100%;
-  height: 28px;
-  padding: 4px 6px;
-  font-size: 14px;
-  border: 1px solid #ccc;
+.effect-item .effect-meta {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.1;
 }
 
-/* Icon input com botão de pasta */
+.effect-item .effect-actions {
+  display: flex;
+  gap: 1px;
+}
+
+.effect-item .edit-effect,
+.effect-item .delete-effect {
+  padding: 6px 8px;
+  border: 1px solid #666;
+  cursor: pointer;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.effect-item .edit-effect:hover,
+.effect-item .delete-effect:hover {
+  border-color: #333;
+}
+
+.effect-item .edit-effect i,
+.effect-item .delete-effect i {
+  font-size: 10px;
+}
+
+/* Effect Creation Dialog */
 .icon-input-group {
   display: flex;
-  align-items: center;
-  gap: 2px;
+  gap: 0;
+  align-items: stretch;
 }
 
 .icon-input-group input {
   flex: 1;
-  height: 28px;
+  margin: 0;
+  border-right: none;
 }
 
 .icon-browse-button {
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  border: 1px solid #ccc;
-  background: #fff;
+  padding: 6px 8px;
+  border: 1px solid #666;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
+  width: 32px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .icon-browse-button:hover {
-  background: #f5f5f5;
+  border-color: #333;
+}
+
+.icon-browse-button i {
+  font-size: 11px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .category-effects {
+    grid-template-columns: 1fr;
+  }
+  
+  .duration-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .duration-input-group {
+    justify-content: space-between;
+  }
+  
+  .dialog-buttons {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+/* Image Browser Styles */
+.browser-header {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.browser-header label {
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.browser-header input {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #666;
+  font-size: 13px;
+  min-height: 35px;
+}
+
+.browser-header button {
+  padding: 6px 12px;
+  border: 1px solid #666;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.browser-header button:hover {
+  border-color: #333;
+}
+
+.image-grid {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #666;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.image-grid .image-item {
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-align: center;
+  padding: 4px;
+}
+
+.image-grid .image-item:hover {
+  border-color: #333;
+}
+
+.image-grid .image-item.selected {
+  border-color: #000;
+}
+
+.image-thumbnail {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-name {
+  font-size: 10px;
+  text-align: center;
+  width: 64px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 2px;
+  line-height: 1.1;
 }
